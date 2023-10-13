@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, Staff</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Welcome, Staff</h1>
+    <p>This is the staff page. You can put content relevant to staff here.</p>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>

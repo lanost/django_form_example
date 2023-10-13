@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, Admin</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Welcome, Admin</h1>
+    <p>This is the admin page. You can put content relevant to admin here.</p>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>

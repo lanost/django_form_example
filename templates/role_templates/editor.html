@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, Editor</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Welcome, Editor</h1>
+    <p>This is the editor page. You can put content relevant to editor here.</p>
+    <a href="{% url 'logout' %}">Logout</a>
+
+</body>
+</html>

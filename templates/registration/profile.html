@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Profile</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Welcome, {{ user.username }}</h1>
+
+    <p>User Role: {{ user.role }}</p>
+
+    <!-- Display user-specific content or actions based on their role -->
+    {% if user.role == 'student' %}
+        <p>This is the student profile page.</p>
+        <!-- Add content specific to students here -->
+    {% elif user.role == 'staff' %}
+        <p>This is the staff profile page.</p>
+        <!-- Add content specific to staff here -->
+    {% elif user.role == 'admin' %}
+        <p>This is the admin profile page.</p>
+        <!-- Add content specific to admins here -->
+    {% elif user.role == 'editor' %}
+        <p>This is the editor profile page.</p>
+        <!-- Add content specific to editors here -->
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome, Student</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    <h1>Welcome, Student</h1>
+    <p>This is the student page. You can put content relevant to students here.</p>
+    <a href="{% url 'logout' %}">Logout</a>
+
+
+</body>
+</html>

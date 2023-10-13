@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+     <style>
+        /* Center the form and h1 */
+        h1, form {
+            text-align: center;
+        }
+
+        /* Form container styles */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #aaa;
+        }
+
+        /* Label styles */
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Input and button styles */
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button style */
+        button {
+            width: 100% !important;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" onsubmit="return validateForm();">
+        {% csrf_token %}
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" id="id_username" maxlength="30" required>
+        <div id="usernameError" class="error-message"></div>
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" id="id_password" required>
+        <div id="passwordError" class="error-message"></div>
+        <button type="submit">Login</button>
+    </form>
+     <script>
+        function validateForm() {
+            var username = document.getElementById("id_username").value;
+            var password = document.getElementById("id_password").value;
+            var usernameError = document.getElementById("usernameError");
+            var passwordError = document.getElementById("passwordError");
+            var hasErrors = false;
+
+            // Clear previous error messages
+            usernameError.innerHTML = "";
+            passwordError.innerHTML = "";
+
+
+            if (password.trim() === "password") {
+                passwordError.innerHTML = "Password cannot be 'password'.";
+                hasErrors = true;
+            }
+
+            if (hasErrors) {
+                return false;
+            }
+
+            // Additional validation checks can be added here
+
+            return true;
+        }
+    </script>
+</body>
+</html>
